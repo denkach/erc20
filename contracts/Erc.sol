@@ -105,7 +105,7 @@ contract ERC20 is IERC20 {
         _beforeTokenTransfer(sender, recipient, amount);
         //require(allowances[sender][recipient] >= amount);
 
-        allowances[sender][recipient] -= amount;
+        allowances[sender][msg.sender] -= amount;
         balances[sender] -= amount;
         balances[recipient] += amount;
 
